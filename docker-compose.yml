@@ -1,0 +1,29 @@
+version: "3.9"
+
+services:
+
+  backend-service:
+    build: ./mural-global-back
+    container_name: mural-global-back
+    command: python run.py
+    volumes:
+      - ./mural-global-back:/app
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_HOST=${DB_HOST}
+      - DB_NAME=${DB_NAME}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+
+  frontend-service:
+    build: ./mural-global-front
+    container_name: mural-global-front
+    command: npm run dev -- --host
+    volumes:
+      - ./mural-global-front:/app
+      - /app/node_modules
+    ports:
+      - "5173:5173"
+    depends_on:
+      - backend-service
