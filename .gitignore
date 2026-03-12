@@ -12,7 +12,7 @@ mural-global-front/.env.local
 mural-global-front/.env.development
 mural-global-front/.env.production
 mural-global-front/.env.test
-mural-global/mural-global-back/venv
+mural-global-back/venv/
 mural-global-back/app/__pycache__
 mural-global-back/app/blueprints/__pycache__
 
