@@ -6,32 +6,70 @@ El objetivo del proyecto es ofrecer un espacio simple para publicar ideas, pregu
 
 ### 🧰 Tecnologías utilizadas
 - Backend
-- Flask
-- Flask Blueprints
-- SQLAlchemy
-- PostgreSQL
+  - Flask
+  - Flask Blueprints
+  - SQLAlchemy
+  - PostgreSQL
 - Frontend
-- React
-- Vite
-- TailwindCSS
+  - React
+  - Vite
+  - TailwindCSS
 - Infraestructura
-- Docker
-- Docker Compose
+  - Docker
+  - Docker Compose
 
 ### 📁 Estructura del proyecto
-- mural-global
-- │
-- ├── mural-global-back
-- │   ├── app
-- │   ├── run.py
-- │   ├── requirements.txt
-- │   └── .env
-- │
-- ├── mural-global-front
-- │   ├── src
-- │   ├── index.html
-- │   └── package.json
-- │
+- mural-global/
+- ├── mural-global-back/
+- │ ├── app/
+- │ │ ├── init.py
+- │ │ ├── models/
+- │ │ │  ├── topic.py
+- │ │ │  └── response.py
+- │ │ ├── blueprints/
+- │ │ │  ├── topic.py
+- │ │ │  └── response.py
+- │ │ ├── services/
+- │ │ │  ├── topic_service.py
+- │ │ │  └── response_service.py
+- │ │ └── utils/
+- │ │    └── validators.py
+- │ ├── run.py
+- │ ├── requirements.txt
+- │ └── .env
+- ├── mural-global-front/
+- │ ├── src/
+- │ │ ├── components/
+- │ │ │  ├── layout/
+- │ │ │  │  ├── Header.jsx
+- │ │ │  │  ├── Footer.jsx
+- │ │ │  │  └── Layout.jsx
+- │ │ │  ├── topics/
+- │ │ │  │  ├── TopicCard.jsx
+- │ │ │  │  ├── TopicList.jsx
+- │ │ │  │  └── TopicForm.jsx
+- │ │ │  ├── responses/
+- │ │ │  │  ├── ResponseList.jsx
+- │ │ │  │  └── ResponseForm.jsx
+- │ │ │  └── common/
+- │ │ │     ├── Button.jsx
+- │ │ │     ├── Textarea.jsx
+- │ │ │     └── Icon.jsx
+- │ │ ├── pages/
+- │ │ │  ├── HomePage.jsx
+- │ │ │  └── TopicPage.jsx
+- │ │ ├── hooks/
+- │ │ │  ├── useTopics.js
+- │ │ │  └── useResponses.js
+- │ │ ├── services/
+- │ │ │  └── api.js
+- │ │ ├── utils/
+- │ │ │  └── formatters.js
+- │ │ ├── styles/
+- │ │ │  └── index.css
+- │ │ └── App.jsx
+- │ ├── index.html
+- │ └── package.json
 - ├── docker-compose.yml
 - └── README.md
 
