@@ -1,19 +1,16 @@
-import { useEffect, useState } from "react"
+import React from 'react';
+import HomePage from './pages/HomePage';
 
+/**
+ * Componente principal de la aplicación.
+ * @component
+ */
 function App() {
-  const [status, setStatus] = useState("loading")
-
-  useEffect(() => {
-    fetch("http://localhost:5000/api/health")
-      .then(res => res.json())
-      .then(data => setStatus(data.status))
-  }, [])
-
   return (
-    <div className="p-10 text-xl">
-      Backend status: {status}
+    <div className="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen">
+      <HomePage />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
